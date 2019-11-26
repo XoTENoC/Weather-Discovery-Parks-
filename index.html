@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body class="theme-1">
+    <div class="all">
+        <div class="container">
+            <div class="head-title">
+                <div class="Location" id="location">
+                    <p>SEMAPHORE PARK</p>
+                </div>
+                <div class="today-weather">
+                    <div class="temperature"><span id="temp-main">28</span></div>
+                    <div class="day">
+                        <h1><span id="today">SUNDAY</span></h1>
+                        <p id="dis">MOSTLY CLOUDY</p>
+                        <p>40% CHANCE OF RAIN</p>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-1">MONDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-2">TUESDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-3">WEDNESDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-4">THURSDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-5">FRIDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-6">SATURDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const key = 'd805c3c5c8679f646e3956c9a6e5405a';
+
+        function weatherBallon(cityID) {
+            fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
+                .then(function(resp) {
+                    return resp.json()
+                }) // Convert data to json
+                .then(function(data) {
+                    drawWeather(data);
+                })
+                .catch(function() {
+                    // catch any errors
+                });
+        }
+
+        function drawWeather(d) {
+            var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+            var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
+            var description = d.weather[0].description;
+
+            document.getElementById('dis').innerHTML = description;
+            document.getElementById('temp-main').innerHTML = celcius + '&deg;';
+            document.getElementById('location').innerHTML = d.name;
+
+            // if (description.indexOf('rain') > 0) {
+            //     document.body.className = 'rainy';
+            // } else if (description.indexOf('cloud') > 0) {
+            //     document.body.className = 'cloudy';
+            // } else if (description.indexOf('sunny') > 0) {
+            //     document.body.className = 'sunny';
+            // } else {
+            //     document.body.className = 'clear';
+            // }
+        }
+        window.onload = function() {
+            weatherBallon(2070830);
+        }
+
+        var today = new Date();
+        var day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+        document.getElementById("today").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-1").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-2").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-3").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-4").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-5").innerHTML = day[today.getDay()];
+        today.setDate(today.getDate() + 1);
+        document.getElementById("day-of-week-6").innerHTML = day[today.getDay()];
+    </script>
+</body>
+
+</html>
