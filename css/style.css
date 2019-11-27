@@ -1,101 +1,104 @@
 @font-face {
-    font-family: 'Bro';
-    src: url("../Fonts/brandon-grotesque-regular-cufonfonts-webfont/brandon-grotesque-black-58a8a3e824392.woff") format("woff");
+  font-family: 'Bro';
+  src: url("../Fonts/brandon-grotesque-regular-cufonfonts-webfont/brandon-grotesque-black-58a8a3e824392.woff") format("woff");
 }
 
 html {
-    margin: 0px;
-    padding: 0px;
-    font-family: Bro;
+  margin: 0px;
+  padding: 0px;
+  font-family: Bro;
 }
 
 body {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .Location {
-    text-align: center;
-    font-size: 25pt;
-    padding-bottom: 0px;
-    font-weight: bold;
-    text-transform: uppercase;
+  text-align: center;
+  font-size: 25pt;
+  padding-bottom: 0px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .Location p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .today-weather {
-    display: -ms-grid;
-    display: grid;
-    width: 95%;
-    margin: 0px auto 0px auto;
-    -ms-grid-columns: 50% 50%;
-    grid-template-columns: 50% 50%;
+  display: -ms-grid;
+  display: grid;
+  width: 95%;
+  margin: 0px auto 0px auto;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 
 .today-weather .temperature {
-    font-size: 170pt;
-    text-align: right;
-    margin-right: 20px;
+  font-size: 170pt;
+  text-align: right;
+  margin-right: 20px;
 }
 
 .today-weather .temperature .main-degree {
-    font-size: 100pt;
-    margin-bottom: auto;
-    font-family: sans-serif;
+  font-size: 100pt;
+  margin-bottom: auto;
+  font-family: sans-serif;
 }
 
 .today-weather .day {
-    font-size: 30pt;
-    line-height: 10px;
-    padding-top: 25px;
-    margin-left: 20px;
+  font-size: 30pt;
+  line-height: 10px;
+  padding-top: 25px;
+  margin-left: 20px;
 }
 
 .today-weather .day #dis {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .forecast {
-    width: 100%;
+  width: 100%;
 }
 
 .forecast .day-forecast {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 33.33% 33.33% 33.33%;
-    grid-template-columns: 33.33% 33.33% 33.33%;
-    /* background-color: #fa7d7d; */
-    font-size: 40pt;
-    padding-top: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33.33% 33.33% 33.33%;
+      grid-template-columns: 33.33% 33.33% 33.33%;
+  /* background-color: #fa7d7d; */
+  font-size: 40pt;
+  padding-top: 15px;
 }
 
 .forecast .day-forecast .day-of-week {
-    text-align: left;
+  text-align: left;
 }
 
 .forecast .day-forecast .icon-space {
-    text-align: center;
+  text-align: center;
 }
 
 .forecast .day-forecast .weather {
-    text-align: right;
+  text-align: right;
 }
 
 .forecast .day-forecast .main-degree-forecast {
-    font-size: 25pt;
-    font-family: sans-serif;
+  font-size: 25pt;
+  font-family: sans-serif;
 }
 
 .theme-1 .all {
-    background-color: #3498db;
-    width: 96%;
-    height: 96vh;
-    color: #fff;
-    padding: 2%;
+  background-color: #3498db;
+  width: 96%;
+  height: 100%;
+  color: #fff;
+  padding: 2%;
 }
 
-
+.theme-1 .clock {
+  float: right;
+  font-size: 15pt;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Bro';
-    src: url('./Fonts/brandon-grotesque-regular-cufonfonts-webfont/brandon-grotesque-black-58a8a3e824392.woff') format('woff');
+    src: url('../Fonts/brandon-grotesque-regular-cufonfonts-webfont/brandon-grotesque-black-58a8a3e824392.woff') format('woff');
 }
 
 html {
@@ -58,7 +58,7 @@ body {
         grid-template-columns: 33.33% 33.33% 33.33%;
         /* background-color: #fa7d7d; */
         font-size: 40pt;
-        padding-top: 30px;
+        padding-top: 15px;
         .day-of-week {
             text-align: left;
         }
@@ -86,9 +86,13 @@ $text-color) {
         .all {
             background-color: $body-bg;
             width: 96%;
-            height: 96vh;
+            height: 100%;
             color: $text-color;
             padding: 2%;
+        }
+        .clock {
+            float: right;
+            font-size: 15pt;
         }
     }
 }

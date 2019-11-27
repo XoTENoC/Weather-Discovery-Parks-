@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Weather</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 
 <body class="theme-1">
     <div class="all">
         <div class="container">
+            <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
             <div class="head-title">
                 <div class="Location" id="location">
                     <p>SEMAPHORE PARK</p>
@@ -22,40 +24,47 @@
                     <div class="day">
                         <h1><span id="today">SUNDAY</span></h1>
                         <p id="dis">MOSTLY CLOUDY</p>
-                        <p><span id="hum">40%</span> HUMIDITY</p>
+                        <p>
+                            <spam id="rain-chance">
+                                </span>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="forecast">
                 <div class="day-forecast">
                     <div class="day-of-week" id="day-of-week-1">MONDAY</div>
-                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
-                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                    <div class="icon-space" id="icon1"></div>
+                    <div class="weather" id="weather1"></div>
                 </div>
                 <div class="day-forecast">
                     <div class="day-of-week" id="day-of-week-2">TUESDAY</div>
                     <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
-                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                    <div class="weather" id="weather2"></div>
                 </div>
                 <div class="day-forecast">
                     <div class="day-of-week" id="day-of-week-3">WEDNESDAY</div>
                     <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
-                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                    <div class="weather" id="weather3"></div>
                 </div>
                 <div class="day-forecast">
                     <div class="day-of-week" id="day-of-week-4">THURSDAY</div>
                     <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
-                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                    <div class="weather" id="weather4"></div>
                 </div>
                 <div class="day-forecast">
                     <div class="day-of-week" id="day-of-week-5">FRIDAY</div>
                     <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
-                    <div class="weather">28<span class="main-degree-forecast">&#8451;</span></div>
+                    <div class="weather" id="weather5"></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="day-of-week" id="day-of-week-6">SATURDAY</div>
+                    <div class="icon-space"><i class="fas fa-cloud-sun-rain"></i></div>
+                    <div class="weather" id="weather6"></div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="./js/app.js"></script>
 </body>
 
