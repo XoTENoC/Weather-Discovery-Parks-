@@ -1,12 +1,11 @@
-const key = 'd805c3c5c8679f646e3956c9a6e5405a';
-
-function weatherBallon(cityID) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
+function loadIt() {
+    fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4de9116d35bb2754e1f7a09bc16f787b/34.8389,138.4839')
         .then(function(resp) {
             return resp.json()
         }) // Convert data to json
         .then(function(data) {
             drawWeather(data);
+            console.log(data);
         })
         .catch(function() {
             // catch any errors
@@ -14,27 +13,15 @@ function weatherBallon(cityID) {
 }
 
 function drawWeather(d) {
-    var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-    var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 32);
-    var description = d.weather[0].description;
+    var temp = d.currently.temperature;
 
-    document.getElementById('dis').innerHTML = description;
-    document.getElementById('temp-main').innerHTML = celcius + '&deg;';
-    document.getElementById('location').innerHTML = d.name;
-
-    // if (description.indexOf('rain') > 0) {
-    //     document.body.className = 'rainy';
-    // } else if (description.indexOf('cloud') > 0) {
-    //     document.body.className = 'cloudy';
-    // } else if (description.indexOf('sunny') > 0) {
-    //     document.body.className = 'sunny';
-    // } else {
-    //     document.body.className = 'clear';
-    // }
+    console.log(temp);
 }
+
 window.onload = function() {
-    weatherBallon(2070830);
+    loadIt();
 }
+
 
 var today = new Date();
 var day = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
