@@ -59,17 +59,18 @@ body {
 }
 
 .forecast {
-  width: 100%;
+  width: 80%;
+  margin: 0px auto;
 }
 
 .forecast .day-forecast {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 33.33% 33.33% 33.33%;
-      grid-template-columns: 33.33% 33.33% 33.33%;
+  -ms-grid-columns: 50% 40% 10%;
+      grid-template-columns: 50% 40% 10%;
   /* background-color: #fa7d7d; */
   font-size: 40pt;
-  padding-top: 15px;
+  padding-top: 2vh;
 }
 
 .forecast .day-forecast .day-of-week {
@@ -78,6 +79,12 @@ body {
 
 .forecast .day-forecast .icon-space {
   text-align: center;
+}
+
+.forecast .day-forecast .icon-space img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  height: 70px;
 }
 
 .forecast .day-forecast .weather {
@@ -89,16 +96,23 @@ body {
   font-family: sans-serif;
 }
 
-.theme-1 .all {
+.theme-1 {
   background-color: #3498db;
-  width: 96%;
-  height: 100%;
   color: #fff;
-  padding: 2%;
 }
 
-.theme-1 .clock {
+.theme-1 .logo-clock {
+  padding-top: 50px;
+}
+
+.theme-1 .logo-clock .logo {
+  height: 200px;
+  padding-left: 10vh;
+}
+
+.theme-1 .logo-clock .clock {
+  font-size: 50pt;
   float: right;
-  font-size: 15pt;
+  padding-right: 10vh;
 }
 /*# sourceMappingURL=style.css.map */

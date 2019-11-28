@@ -1,5 +1,5 @@
 function loadIt() {
-    fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4de9116d35bb2754e1f7a09bc16f787b/34.8389,138.4839')
+    fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/4de9116d35bb2754e1f7a09bc16f787b/-34.851582,138.477529')
         .then(function(resp) {
             return resp.json()
         }) // Convert data to json
@@ -16,6 +16,12 @@ function drawWeather(d) {
     var temp = Math.round(parseFloat(d.currently.temperature - 32) * 5 / 9);
     var Daily = Math.round(parseFloat(d.daily.data[0].temperatureMax - 32) * 5 / 9);
     var rainPercent = Math.round(parseFloat(d.currently.precipProbability) * 100);
+    var icon = '<img src="./img/svg/' + d.daily.data[0].icon + '.svg" />';
+    var iconOne = '<img src="./img/svg/' + d.daily.data[1].icon + '.svg" />';
+    var iconTwo = '<img src="./img/svg/' + d.daily.data[2].icon + '.svg" />';
+    var iconThree = '<img src="./img/svg/' + d.daily.data[3].icon + '.svg" />';
+    var iconFour = '<img src="./img/svg/' + d.daily.data[4].icon + '.svg" />';
+    var iconFive = '<img src="./img/svg/' + d.daily.data[5].icon + '.svg" />';
 
     console.log(Daily);
     document.getElementById('weather1').innerHTML = Math.round(parseFloat(d.daily.data[0].temperatureMax - 32) * 5 / 9) + '&deg';
@@ -27,8 +33,15 @@ function drawWeather(d) {
     document.getElementById('temp-main').innerHTML = temp + '&deg';
     document.getElementById('dis').innerHTML = d.currently.summary;
     document.getElementById('rain-chance').innerHTML = rainPercent + '% CHANCE OF RAIN';
-    document.getElementById('icon1').innerHTML = d.daily.data[0].icon;
+    document.getElementById('icon1').innerHTML = icon;
+    document.getElementById('icon2').innerHTML = iconOne;
+    document.getElementById('icon3').innerHTML = iconTwo;
+    document.getElementById('icon4').innerHTML = iconThree;
+    document.getElementById('icon5').innerHTML = iconFour;
+    document.getElementById('icon6').innerHTML = iconFive;
 }
+
+// ./img/climacons-master/climacons-master/SVG/' + d.daily.data[0].icon + '.svg
 
 window.onload = function() {
     loadIt();
@@ -71,7 +84,7 @@ function showTime() {
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
 
-    var time = h + ":" + m + ":" + s + " " + session;
+    var time = h + ":" + m + " " + session;
     document.getElementById("MyClockDisplay").innerText = time;
     document.getElementById("MyClockDisplay").textContent = time;
 

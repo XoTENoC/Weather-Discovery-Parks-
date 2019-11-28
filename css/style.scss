@@ -52,18 +52,23 @@ body {
 }
 
 .forecast {
-    width: 100%;
+    width: 80%;
+    margin: 0px auto;
     .day-forecast {
         display: grid;
-        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-columns: 50% 40% 10%;
         /* background-color: #fa7d7d; */
         font-size: 40pt;
-        padding-top: 15px;
+        padding-top: 2vh;
         .day-of-week {
             text-align: left;
         }
         .icon-space {
             text-align: center;
+            img {
+                filter: invert(1);
+                height: 70px;
+            }
         }
         .weather {
             text-align: right;
@@ -83,16 +88,19 @@ $innertext,
 $button-bg,
 $text-color) {
     .#{$theme-name} {
-        .all {
-            background-color: $body-bg;
-            width: 96%;
-            height: 100%;
-            color: $text-color;
-            padding: 2%;
-        }
-        .clock {
-            float: right;
-            font-size: 15pt;
+        background-color: $body-bg;
+        color: $text-color;
+        .logo-clock {
+            padding-top: 50px;
+            .logo {
+                height: 200px;
+                padding-left: 10vh;
+            }
+            .clock {
+                font-size: 50pt;
+                float: right;
+                padding-right: 10vh;
+            }
         }
     }
 }
