@@ -100,21 +100,195 @@ body {
   font-family: sans-serif;
 }
 
-.theme-1 {
+/* This just resets the styles of our unordered list that makes our hamburger/hotdog icon */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Styles for the menu button */
+.menu-btn {
+  background-color: 3498db;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  height: 56px;
+  left: 24px;
+  position: fixed;
+  top: 24px;
+  width: 56px;
+}
+
+/* Styles for the menu */
+.menu {
+  bottom: 0;
+  background-color: #636e72;
+  left: 0;
+  margin: 0;
+  padding: 32px;
+  position: fixed;
+  top: 0;
+  width: 288px;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: -webkit-transform .2s linear;
+  transition: transform .2s linear;
+  transition: transform .2s linear, -webkit-transform .2s linear;
+}
+
+/* Creating the hamburger/hotdog icon in CSS */
+.menu-btn li {
+  background-color: #ffffff;
+  bottom: 0;
+  height: 2px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 16px;
+  top: 0;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+/* The following two lines set the three lines of our hamburger/hotdog icon apart */
+.menu-btn li:first-child {
+  -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+}
+
+.menu-btn li:last-child {
+  -webkit-transform: translate3d(0, 4px, 0);
+          transform: translate3d(0, 4px, 0);
+}
+
+/* We're now in the animation territory. These are the classes you toggle on with our Javascript function. */
+.menu-btn--on li:first-child {
+  -webkit-transform: rotate(135deg) translate3d(0, 0, 0);
+          transform: rotate(135deg) translate3d(0, 0, 0);
+}
+
+.menu-btn--on li:last-child {
+  -webkit-transform: rotate(-135deg) translate3d(0, 0, 0);
+          transform: rotate(-135deg) translate3d(0, 0, 0);
+}
+
+.menu-btn--on li:nth-child(2) {
+  opacity: 0;
+}
+
+.menu--open {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.theme-switch-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.theme-switch-wrapper em {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.padding-top {
+  margin-top: 100px;
+}
+
+.light {
   background-color: #3498db;
   color: #fff;
 }
 
-.theme-1 .logo-clock {
+.light .logo-clock {
   padding-top: 50px;
 }
 
-.theme-1 .logo-clock .logo {
+.light .logo-clock .logo {
   height: 200px;
   padding-left: 10vh;
 }
 
-.theme-1 .logo-clock .clock {
+.light .logo-clock .clock {
+  font-size: 50pt;
+  float: right;
+  padding-right: 10vh;
+}
+
+.dark {
+  background-color: #2d3436;
+  color: #fff;
+}
+
+.dark .logo-clock {
+  padding-top: 50px;
+}
+
+.dark .logo-clock .logo {
+  height: 200px;
+  padding-left: 10vh;
+}
+
+.dark .logo-clock .clock {
   font-size: 50pt;
   float: right;
   padding-right: 10vh;
